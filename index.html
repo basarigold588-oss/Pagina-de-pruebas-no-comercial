@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BASARI GOLD</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="BASARI GOLD S.A.S. — Soluciones corporativas y productos premium para empresas: Samsonite, Roncato y Lugano, personalizados con tu marca.">
+<link rel="icon" href="icon-verde.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="shortcut icon" href="icon-verde.ico">
+<meta name="theme-color" content="#0a2620">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: bandas a ancho completo que alternan verde profundo y marfil; contenido en una columna central de 1180px */
+:root{
+  --green-900:#0a2620;
+  --green-800:#0f3329;
+  --gold:#c9a96b;
+  --gold-soft:#e2cc9c;
+  --gold-ink:#8a6b33;
+  --ivory:#f4f1ea;
+  --paper:#fbfaf6;
+  --ink:#1c2420;
+  --muted:#5e6b64;
+  --line:#ddd6c6;
+  --line-dark:rgba(201,169,107,.28);
+  --on-dark:#eef0ea;
+  --on-dark-muted:#cfd5cc;
+  --wa:#1fa855;
+  --f-display:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --f-body:"Jost","Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;
+  --wrap:1180px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--green-900)}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;margin-bottom:12px;color:var(--muted)}
+.dark{background:var(--green-800);color:var(--on-dark)}
+.dark .eyebrow{color:var(--gold-soft)}
+.h2{font-size:clamp(2rem,3.6vw,2.7rem)}
+.h2 em{font-style:italic}
+.dark .h2 em{color:var(--gold-soft)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border:1px solid var(--gold);background:var(--gold);color:var(--green-900);text-decoration:none;font-size:.86rem;font-weight:500;letter-spacing:.04em;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.btn.ghost{background:transparent;color:var(--gold-soft)}
+.btn.ghost:hover{background:var(--gold);color:var(--green-900)}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn.wa:hover{background:#178d47;border-color:#178d47}
+.btn.line{background:transparent;border-color:var(--green-800);color:var(--green-800)}
+.btn.line:hover{background:var(--green-800);color:var(--on-dark)}
+.btn svg{width:17px;height:17px;flex:none}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--green-900);color:var(--on-dark);border-bottom:1px solid var(--line-dark)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:72px}
+.logo{display:flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1;color:#f3efe4}
+.logo b{font-family:var(--f-display);font-weight:500;font-size:1.9rem;letter-spacing:.2em;margin-right:-.2em}
+.logo small{font-size:.58rem;letter-spacing:.62em;color:var(--gold);margin-top:3px;margin-right:-.62em}
+.nav{display:flex;gap:28px;margin-left:auto;align-items:center}
+.nav a{text-decoration:none;font-size:.85rem;color:#d9ddd5;padding:6px 0;border-bottom:1px solid transparent}
+.nav a:hover,.nav a.on{color:var(--gold);border-color:var(--gold)}
+.top .btn{padding:10px 18px;font-size:.8rem}
+.menu-t{display:none;background:none;border:0;color:var(--on-dark);width:42px;height:42px;margin-left:auto}
+@media (max-width:980px){
+  .nav{position:fixed;left:0;right:0;top:calc(72px + env(safe-area-inset-top,0px));flex-direction:column;align-items:stretch;gap:0;background:var(--green-900);padding:8px max(16px,env(safe-area-inset-right,0px)) 20px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line-dark);display:none}
+  .nav.open{display:flex}
+  .nav a{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .menu-t{display:grid;place-items:center}
+  .top .btn{display:none}
+}
+
+/* Hero */
+.hero{position:relative;background:var(--green-900);color:#f3efe4;overflow:hidden}
+.hero .photo{position:absolute;top:0;bottom:0;right:0;width:58%;background:url(assets/hero.jpg) 40% center/cover no-repeat}
+.hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--green-900) 0%,rgba(10,38,32,.55) 18%,rgba(10,38,32,0) 45%)}
+.hero .wrap{position:relative;padding-block:110px 120px}
+.hero .txt{max-width:500px}
+.hero h1{font-size:clamp(2.7rem,6vw,4.6rem)}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero p{max-width:40ch;color:#d7dbd2;margin:22px 0 34px;font-weight:300;font-size:1.08rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:800px){
+  .hero .photo{position:relative;width:100%;aspect-ratio:1024/621;max-width:100%;background-position:center}
+  .hero .photo::after{background:linear-gradient(180deg,rgba(10,38,32,0) 60%,var(--green-900))}
+  .hero .wrap{padding-block:16px 56px}
+}
+
+/* Quiénes somos */
+.about{background:var(--paper);border-bottom:1px solid var(--line)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding-block:88px;align-items:start}
+.about .body p{color:var(--muted);max-width:56ch}
+.about .body p+p{margin-top:16px}
+.about .body strong{color:var(--ink);font-weight:500}
+.about .sign{font-family:var(--f-display);font-style:italic;font-size:1.5rem;color:var(--gold-ink);margin-top:28px!important}
+@media (max-width:820px){.about .wrap{grid-template-columns:1fr;gap:24px;padding-block:64px}}
+
+/* Pilares */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.pillar{padding:28px 24px 0 0;min-width:0}
+.pillar+.pillar{padding-left:24px;border-left:1px solid var(--line)}
+.pillar svg{width:36px;height:36px;color:#a8874b;margin-bottom:14px}
+.pillar h3{font-family:var(--f-body);font-size:1rem;font-weight:500;margin-bottom:6px}
+.pillar p{font-size:.88rem;color:var(--muted)}
+.pillars-wrap{grid-column:1/-1}
+@media (max-width:900px){.pillars{grid-template-columns:1fr 1fr;row-gap:8px}.pillar:nth-child(3){padding-left:0;border-left:0}}
+@media (max-width:480px){.pillars{grid-template-columns:1fr}.pillar,.pillar+.pillar{padding:22px 0 0;border-left:0}}
+
+/* Qué ofrecemos */
+.offer .wrap{padding-block:72px}
+.offer .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px 40px;margin-bottom:40px}
+.offer .head p{max-width:46ch;color:var(--on-dark-muted);font-weight:300}
+.cat-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:28px 12px}
+.cat{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.84rem;color:#e2e5de;text-align:center}
+.cat i{width:58px;height:58px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-soft)}
+.cat svg{width:25px;height:25px}
+
+/* Marcas */
+.brands .wrap{padding-block:80px}
+.brands .head{max-width:640px;margin-bottom:40px}
+.brands .head p{color:var(--muted);margin-top:14px}
+.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.brand{background:var(--paper);border:1px solid var(--line);padding:36px 30px 32px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.brand .wm{height:48px;display:flex;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:6px;box-sizing:content-box}
+.wm-roncato{font-weight:600;letter-spacing:.18em;font-size:1.15rem}
+.wm-samsonite{font-weight:500;font-size:1.4rem;letter-spacing:.01em}
+.wm-lugano{font-family:var(--f-display);letter-spacing:.28em;font-size:1.4rem}
+.brand h3{font-size:1.55rem}
+.brand p{font-size:.9rem;color:var(--muted)}
+.brand ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.brand li{font-size:.76rem;border:1px solid var(--line);padding:3px 10px;color:var(--muted)}
+@media (max-width:860px){.brand-grid{grid-template-columns:1fr}}
+
+/* Soluciones */
+.solutions .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;padding-block:80px;align-items:center}
+.solutions .intro p{color:var(--on-dark-muted);font-weight:300;margin:18px 0 30px;max-width:42ch}
+.sol-photo{margin:0;min-width:0;border:1px solid var(--line-dark)}
+.sol-photo img{width:100%;height:auto;aspect-ratio:1600/893;object-fit:cover}
+.sol-list{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark);margin-top:8px}
+.sol{padding:26px 22px 4px 0;min-width:0}
+.sol+.sol{padding-left:22px;border-left:1px solid var(--line-dark)}
+@media (max-width:1000px){.sol-list{grid-template-columns:1fr 1fr}.sol:nth-child(3){padding-left:0;border-left:0}.sol{padding-bottom:22px}}
+.sol svg{width:30px;height:30px;color:var(--gold);margin-bottom:12px}
+.sol h3{font-family:var(--f-body);font-size:1rem;font-weight:500;margin-bottom:6px}
+.sol p{font-size:.86rem;color:var(--on-dark-muted);font-weight:300}
+@media (max-width:860px){.solutions .wrap{grid-template-columns:1fr;gap:36px;padding-block:64px}}
+@media (max-width:480px){.sol-list{grid-template-columns:1fr}.sol+.sol{padding-left:0;border-left:0;border-top:1px solid var(--line-dark)}}
+
+/* Proceso */
+.process .wrap{padding-block:80px}
+.process .h2{margin-bottom:36px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);counter-reset:s;border-top:1px solid var(--line)}
+.step{padding:24px 24px 0 0;counter-increment:s;min-width:0}
+.step::before{content:"0" counter(s);font-family:var(--f-display);font-size:1.8rem;color:#a8874b;display:block;margin-bottom:6px}
+.step h3{font-family:var(--f-body);font-size:1rem;font-weight:500;margin-bottom:6px}
+.step p{font-size:.88rem;color:var(--muted)}
+@media (max-width:800px){.steps{grid-template-columns:1fr 1fr;row-gap:12px}}
+@media (max-width:460px){.steps{grid-template-columns:1fr}}
+
+/* Galería */
+.gallery{background:var(--paper);border-block:1px solid var(--line)}
+.gallery .wrap{padding-block:80px}
+.gallery .lead{color:var(--muted);margin:14px 0 24px;max-width:60ch}
+.albums{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.albums button{border:1px solid var(--line);background:var(--paper);padding:7px 16px;font-size:.82rem;color:var(--ink)}
+.albums button.on{background:var(--green-800);border-color:var(--green-800);color:var(--on-dark)}
+.g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.g-item{position:relative;aspect-ratio:4/3;overflow:hidden;background:#e8e3d6;border:0;padding:0;max-width:100%}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.g-item:hover img{transform:scale(1.05)}
+.g-item span{position:absolute;inset:auto 0 0 0;padding:22px 12px 10px;background:linear-gradient(transparent,rgba(10,38,32,.85));color:#f3efe4;font-size:.8rem;text-align:left}
+.g-empty{border:1px dashed var(--line);padding:56px 20px;text-align:center;color:var(--muted);font-size:.92rem}
+.g-empty svg{width:40px;height:40px;color:#b5a582;margin:0 auto 12px}
+.g-empty b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(6,20,17,.94);display:grid;place-items:center;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lightbox figure{margin:0}
+.lightbox img{max-height:82vh;width:auto;max-width:100%}
+.lightbox figcaption{color:#e7e4da;text-align:center;margin-top:12px;font-size:.9rem;font-variant-numeric:tabular-nums;white-space:pre-wrap}
+@media (max-width:560px){.g-grid{grid-template-columns:1fr 1fr;gap:6px}.g-more b{font-size:1.5rem}}
+.g-more img{filter:blur(2px) brightness(.45);transform:scale(1.08)}
+.g-more:hover img{transform:scale(1.12)}
+.g-more b{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#f3efe4;font-family:var(--f-display);font-weight:500;font-size:2rem;line-height:1}
+.g-more small{font-family:var(--f-body);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);border-bottom:1px solid var(--gold);padding-bottom:3px}
+.lb-btn{position:absolute;background:rgba(10,38,32,.6);border:1px solid var(--gold);color:var(--gold-soft);width:44px;height:44px;font-size:1.3rem;display:grid;place-items:center}
+.lb-close{top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px))}
+.lb-prev{left:calc(14px + env(safe-area-inset-left,0px));top:50%}
+.lb-next{right:calc(14px + env(safe-area-inset-right,0px));top:50%}
+
+/* CTA + contacto */
+.cta{position:relative;text-align:center;border-top:1px solid var(--line-dark)}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 120% at 50% 0%,rgba(201,169,107,.16),transparent 70%)}
+.cta .wrap{position:relative;padding-block:64px}
+.cta h2{font-style:italic;font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.cta h2 b{font-style:normal;font-weight:500;color:var(--gold)}
+.cta p{margin:10px 0 26px;color:var(--on-dark-muted);font-weight:300}
+.cta .ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;padding-block:80px}
+.contact .info>p{color:var(--muted);margin:16px 0 28px;max-width:44ch}
+.channel{display:flex;gap:16px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}
+.channel:last-of-type{border-bottom:1px solid var(--line)}
+.channel>svg{width:28px;height:28px;color:var(--gold-ink);flex:none}
+.channel div{min-width:0}
+.channel small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.channel a,.channel span{font-size:1.05rem;text-decoration:none;user-select:all;overflow-wrap:anywhere}
+.channel .copy-b{margin-left:auto;background:none;border:1px solid var(--line);font-size:.75rem;padding:6px 10px;color:var(--muted);flex:none}
+form{background:var(--paper);border:1px solid var(--line);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form h3{grid-column:1/-1;font-size:1.6rem;margin-bottom:2px}
+form label{display:flex;flex-direction:column;gap:6px;font-size:.78rem;letter-spacing:.06em;color:var(--muted);min-width:0}
+form .full{grid-column:1/-1}
+form input,form textarea{font:inherit;font-size:.95rem;border:1px solid var(--line);background:#fff;padding:11px 12px;color:var(--ink);border-radius:0;width:100%}
+form textarea{min-height:120px;resize:vertical}
+.send{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.form-msg{grid-column:1/-1;font-size:.86rem;color:#8a3b2b}
+.form-msg.ok{color:#2c6b46}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr;gap:36px;padding-block:64px}}
+@media (max-width:520px){form{grid-template-columns:1fr;padding:20px}}
+
+/* Footer */
+footer{background:var(--green-900);color:#c9cec5;font-size:.84rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;padding-block:36px 28px}
+footer nav{display:flex;flex-wrap:wrap;gap:10px 26px}
+footer nav a{text-decoration:none}
+footer nav a:hover{color:var(--gold)}
+footer .legal{flex-basis:100%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;border-top:1px solid rgba(255,255,255,.08);padding-top:18px;font-size:.76rem;color:#8f998f}
+
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.fab svg{width:30px;height:30px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:95;background:var(--green-900);color:#f3efe4;padding:10px 18px;font-size:.85rem;border:1px solid var(--line-dark)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></g></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="BASARI GOLD, inicio"><b>BASARI</b><small>GOLD</small></a>
+    <nav class="nav" id="nav">
+      <a href="#inicio" class="on">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#ofrecemos">Qué ofrecemos</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#soluciones">Soluciones corporativas</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn" href="#contacto">Contáctanos</a>
+    <button class="menu-t" id="menuT" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="photo" role="img" aria-label="Ejecutiva con morral premium frente a la ciudad al atardecer"></div>
+  <div class="wrap">
+    <div class="txt">
+      <p class="eyebrow" style="color:var(--gold-soft)">Soluciones corporativas premium</p>
+      <h1>Equipamos <em>tus grandes ideas</em></h1>
+      <p>Productos de alta calidad, diseño y funcionalidad para empresas que quieren marcar la diferencia, personalizados con tu marca.</p>
+      <div class="ctas">
+        <a class="btn wa js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Escríbenos por WhatsApp</a>
+        <a class="btn ghost" href="#nosotros">Conócenos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Quiénes somos</p>
+      <h2 class="h2">Tu aliado estratégico en <em>branding</em> empresarial</h2>
+    </div>
+    <div class="body">
+      <p><strong>BASARI GOLD S.A.S.</strong> es una empresa colombiana especializada en soluciones corporativas y comercialización de productos premium para empresas.</p>
+      <p>Contamos con un portafolio de marcas reconocidas como <strong>Samsonite</strong>, <strong>Roncato</strong> y <strong>Lugano</strong>, con soluciones para equipos de trabajo, programas corporativos, eventos, clientes, instituciones y estrategias de branding empresarial.</p>
+      <p>Nos diferenciamos por combinar calidad, diseño, personalización y servicio, ayudando a las empresas a convertir cada producto en una herramienta para fortalecer su identidad y generar experiencias de marca.</p>
+      <p class="sign">Productos que representan tu marca.</p>
+    </div>
+    <div class="pillars-wrap">
+      <div class="pillars">
+        <div class="pillar"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20 5l4 8 9 1-6.5 6.3L28 29l-8-4.3L12 29l1.5-8.7L7 14l9-1z"/><path d="M14 34h12"/></svg><h3>Calidad</h3><p>Productos de marcas internacionales, hechos para durar.</p></div>
+        <div class="pillar"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="7" y="9" width="26" height="22" rx="2"/><path d="M7 16h26M13 23h6M13 27h10"/></svg><h3>Diseño</h3><p>Líneas elegantes y funcionales para el día a día ejecutivo.</p></div>
+        <div class="pillar"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 33l10-10M23 9l8 8-12 12-8-8z"/><path d="M27 5l8 8"/><circle cx="12" cy="31" r="2"/></svg><h3>Personalización</h3><p>Tu logo o el nombre de cada persona en cada producto.</p></div>
+        <div class="pillar"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8 30c0-6 5-10 12-10s12 4 12 10"/><circle cx="20" cy="12" r="5"/><path d="M26 30l3 3 6-6"/></svg><h3>Servicio</h3><p>Asesoría cercana desde la idea hasta la entrega.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer dark" id="ofrecemos">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Qué ofrecemos</p><h2 class="h2">Productos para <em>cada necesidad</em></h2></div>
+      <p>Trabajamos estas líneas para empresas e instituciones. Escríbenos y te asesoramos según tu proyecto y cantidades.</p>
+    </div>
+    <div class="cat-list" id="catList"></div>
+  </div>
+</section>
+
+<section class="brands" id="marcas">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Nuestras marcas</p>
+      <h2 class="h2">Marcas reconocidas en el mundo</h2>
+      <p>Elegidas por su calidad, diseño y durabilidad.</p>
+    </div>
+    <div class="brand-grid">
+      <article class="brand">
+        <div class="wm"><span class="wm-samsonite">Samsonite</span></div>
+        <h3>Resistencia, elegancia y tecnología</h3>
+        <p>Equipaje y accesorios de viaje para ejecutivos y equipos que se mueven.</p>
+        <ul><li>Maletas</li><li>Morrales</li><li>Viaje</li></ul>
+      </article>
+      <article class="brand">
+        <div class="wm"><span class="wm-roncato">RONCATO</span></div>
+        <h3>Diseño italiano para viajar</h3>
+        <p>Maletas y morrales con carácter, pensados para el viajero exigente.</p>
+        <ul><li>Maletas</li><li>Morrales</li><li>Accesorios</li></ul>
+      </article>
+      <article class="brand">
+        <div class="wm"><span class="wm-lugano">LUGANO</span></div>
+        <h3>Diseño urbano, movilidad y organización</h3>
+        <p>Morrales, tulas y accesorios ideales para kits corporativos personalizados.</p>
+        <ul><li>Morrales</li><li>Tulas</li><li>Botellas</li><li>Organizadores</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="solutions dark" id="soluciones">
+  <div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Soluciones corporativas</p>
+      <h2 class="h2">Productos que <em>representan tus valores</em></h2>
+      <p>Personaliza cada detalle con el logo de tu empresa y convierte cada producto en una herramienta de comunicación de tu marca.</p>
+      <a class="btn wa js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Cuéntanos tu proyecto</a>
+    </div>
+    <figure class="sol-photo"><img src="assets/kit-corporativo.jpg" loading="lazy" width="1600" height="893" alt="Kit corporativo personalizado: morral, botella térmica, libreta y bolígrafo con logo"></figure>
+    <div class="sol-list">
+      <div class="sol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="5" y="7" width="22" height="20" rx="1"/><path d="M5 12h22M11 4v6M21 4v6M11 18h4v4h-4z"/></svg><h3>Eventos corporativos</h3><p>Kits para congresos, lanzamientos y convenciones.</p></div>
+      <div class="sol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 13l12-7 12 7M7 13v12M13 13v12M19 13v12M25 13v12M4 27h24"/></svg><h3>Programas institucionales</h3><p>Dotación para colaboradores, aliados e instituciones.</p></div>
+      <div class="sol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="5" y="12" width="22" height="15"/><path d="M3 8h26v4H3zM16 8v19M16 8c-3-5-8-4-6-1 1 1 6 1 6 1zm0 0c3-5 8-4 6-1-1 1-6 1-6 1z"/></svg><h3>Regalos empresariales</h3><p>Detalles premium para clientes y fechas especiales.</p></div>
+      <div class="sol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="11" cy="11" r="4"/><circle cx="22" cy="12" r="3"/><path d="M3 26c0-5 4-8 8-8s8 3 8 8M18 19c4-1 10 1 10 7"/></svg><h3>Equipos de trabajo</h3><p>Kits de bienvenida y equipamiento para tu talento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <p class="eyebrow">Cómo trabajamos</p>
+    <h2 class="h2">De la idea al producto con tu marca</h2>
+    <div class="steps">
+      <div class="step"><h3>Nos escribes</h3><p>Por WhatsApp o correo nos cuentas qué necesitas y para cuántas personas.</p></div>
+      <div class="step"><h3>Te asesoramos</h3><p>Te recomendamos productos y opciones de personalización según tu objetivo.</p></div>
+      <div class="step"><h3>Recibes la propuesta</h3><p>Te enviamos la cotización con la muestra digital de tu logo.</p></div>
+      <div class="step"><h3>Entregamos</h3><p>Producimos, marcamos y despachamos a tu empresa o evento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <p class="eyebrow">Galería</p>
+    <h2 class="h2">Proyectos y entregas</h2>
+    <p class="lead">Kits, eventos y productos personalizados que hemos entregado a nuestros clientes.</p>
+    <div class="albums" id="albums" hidden></div>
+    <div class="g-grid" id="gGrid"></div>
+  </div>
+</section>
+
+<section class="cta dark">
+  <div class="wrap">
+    <h2>Elige calidad, elige <b>BASARI GOLD</b></h2>
+    <p>Soluciones corporativas premium para empresas que piensan diferente.</p>
+    <div class="ctas">
+      <a class="btn wa js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+      <a class="btn ghost" href="#contacto"><svg><use href="#i-mail"/></svg>Correo</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="info">
+      <p class="eyebrow">Contacto</p>
+      <h2 class="h2">Hablemos de tu proyecto</h2>
+      <p>Escríbenos por WhatsApp o correo y un asesor te responde con opciones y cotización.</p>
+      <div class="channel">
+        <svg><use href="#i-wa"/></svg>
+        <div><small>WhatsApp</small><a id="waText" class="js-wa" href="#" target="_blank" rel="noopener"></a></div>
+        <button class="copy-b" data-copy="wa">Copiar</button>
+      </div>
+      <div class="channel">
+        <svg><use href="#i-mail"/></svg>
+        <div><small>Correo</small><span id="mailText"></span></div>
+        <button class="copy-b" data-copy="mail">Copiar</button>
+      </div>
+    </div>
+    <form id="form" novalidate>
+      <h3>Déjanos tu mensaje</h3>
+      <label>Nombre<input id="f-nombre" autocomplete="name"></label>
+      <label>Empresa<input id="f-empresa" autocomplete="organization"></label>
+      <label>Celular<input id="f-tel" type="tel" autocomplete="tel"></label>
+      <label>Correo<input id="f-correo" type="email" autocomplete="email"></label>
+      <label class="full">Mensaje<textarea id="f-msg" placeholder="Ej.: Necesitamos 80 morrales con logo para un kit de bienvenida en diciembre."></textarea></label>
+      <p class="form-msg" id="formMsg" hidden></p>
+      <div class="send">
+        <button type="submit" class="btn wa" data-via="wa"><svg><use href="#i-wa"/></svg>Enviar por WhatsApp</button>
+        <button type="submit" class="btn line" data-via="mail"><svg><use href="#i-mail"/></svg>Enviar por correo</button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#inicio"><b style="font-size:1.5rem">BASARI</b><small>GOLD</small></a>
+    <nav>
+      <a href="#nosotros">Nosotros</a><a href="#ofrecemos">Qué ofrecemos</a><a href="#marcas">Marcas</a><a href="#soluciones">Soluciones corporativas</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+    </nav>
+    <div class="legal"><span>© <span id="yr"></span> BASARI GOLD S.A.S. Todos los derechos reservados.</span><span>Productos que representan tu marca.</span></div>
+  </div>
+</footer>
+
+<a class="fab js-wa" href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<div class="lightbox" id="lb" hidden>
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Cerrar">×</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Foto anterior">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Foto siguiente">›</button>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ============================================================
+   CONFIGURACIÓN — cambia solo estos tres valores
+   ============================================================ */
+var CONFIG = {
+  WHATSAPP: '573148631040',          // número con indicativo 57, sin + ni espacios
+  EMAIL: 'ventas@basarigold.com',     // correo de ventas
+  API_URL: 'https://script.google.com/macros/s/AKfycby-x2T-sWPp8PN_r7xzTaSmwvSHLqk7JOwIB2UAk3VJWYEqpz5F3Aug4mUoyGAHuxap/exec'                          // URL /exec del Apps Script de la galería (Google Drive)
+};
+var MSG_WA = 'Hola BASARI GOLD, quiero información sobre sus productos y soluciones corporativas.';
+
+/* Líneas de producto (informativas) */
+var LINEAS = [
+  ['Morrales','<path d="M7 9a5 5 0 0 1 10 0v11H7z"/><path d="M10 4h4M9 14h6v4H9z"/>'],
+  ['Maletas','<rect x="6" y="6" width="12" height="14" rx="2"/><path d="M10 6V3h4v3M9 9v8M15 9v8M8 20v1M16 20v1"/>'],
+  ['Tulas','<path d="M5 9h14l-1.5 11h-11z"/><path d="M9 9a3 3 0 0 1 6 0"/>'],
+  ['Loncheras','<rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V5h6v3M4 12h16"/>'],
+  ['Organizadores','<rect x="4" y="6" width="16" height="13" rx="1.5"/><path d="M4 10h16M8 13h3M8 16h8"/>'],
+  ['Canguros','<path d="M3 10c3 1 15 1 18 0M5 11c0 4 3 6 7 6s7-2 7-6"/><path d="M9 13h6"/>'],
+  ['Botellas','<path d="M10 3h4v3l1 2v12a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V8l1-2z"/><path d="M9 12h6"/>'],
+  ['Accesorios','<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/>'],
+  ['Viaje','<path d="M3 13l18-8-6 16-3-7z"/><path d="M12 14l9-9"/>'],
+  ['Tecnología','<rect x="5" y="5" width="14" height="10" rx="1"/><path d="M3 19h18M9 15l-1 4M15 15l1 4"/>'],
+  ['Kits corporativos','<rect x="4" y="9" width="16" height="11"/><path d="M3 6h18v3H3zM12 6v14M12 6c-2-3-6-3-4 0zM12 6c2-3 6-3 4 0z"/>']
+];
+
+var $ = function(s){ return document.querySelector(s); };
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function waLink(text){ return 'https://wa.me/' + CONFIG.WHATSAPP + (text ? '?text=' + encodeURIComponent(text) : ''); }
+function fmtPhone(n){ var d = String(n).replace(/\D/g,''); if (d.indexOf('57')===0 && d.length===12) return '+57 ' + d.substr(2,3) + ' ' + d.substr(5,3) + ' ' + d.substr(8); return '+' + d; }
+function toast(t){ var el=$('#toast'); el.textContent=t; el.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(function(){ el.hidden=true; },2400); }
+
+/* Líneas */
+$('#catList').innerHTML = LINEAS.map(function(l){
+  return '<div class="cat"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">' + l[1] + '</svg></i>' + esc(l[0]) + '</div>';
+}).join('');
+
+/* Contacto */
+document.querySelectorAll('.js-wa').forEach(function(a){ a.href = waLink(MSG_WA); });
+$('#waText').textContent = fmtPhone(CONFIG.WHATSAPP);
+$('#mailText').textContent = CONFIG.EMAIL;
+$('#yr').textContent = new Date().getFullYear();
+
+/* ---------- Galería desde Google Drive ---------- */
+var gal = { fotos: [], album: '', vis: [], i: 0 };
+var MAX_FOTOS = 8;   // cuadros visibles en la galería; el último es "Ver más" cuando hay más fotos
+
+/* Deslizar con el dedo en el visor (celular) */
+(function(){
+  var x0 = null, lb = document.getElementById('lb');
+  lb.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) showLb(gal.i + (dx < 0 ? 1 : -1));
+  }, {passive:true});
+})();
+function loadGallery(){
+  if (!CONFIG.API_URL) return renderGallery();
+  $('#gGrid').innerHTML = '<div class="g-empty" style="grid-column:1/-1">Cargando fotos…</div>';
+  fetch(CONFIG.API_URL).then(function(r){ return r.json(); }).then(function(d){
+    if (!d || !d.ok) throw new Error((d && d.error) || 'Respuesta inválida');
+    gal.fotos = d.fotos || []; renderGallery();
+  }).catch(function(err){ console.warn('Galería Drive:', err); renderGallery(); });
+}
+function renderGallery(){
+  var albums = [];
+  gal.fotos.forEach(function(f){ if (f.album && albums.indexOf(f.album) < 0) albums.push(f.album); });
+  $('#albums').hidden = albums.length < 2;
+  $('#albums').innerHTML = ['Todas'].concat(albums).map(function(a){
+    var v = a === 'Todas' ? '' : a;
+    return '<button data-album="' + esc(v) + '" class="' + (gal.album === v ? 'on' : '') + '">' + esc(a) + '</button>';
+  }).join('');
+  gal.vis = gal.fotos.filter(function(f){ return !gal.album || f.album === gal.album; });
+  var total = gal.vis.length;
+  var lista = total > MAX_FOTOS ? gal.vis.slice(0, MAX_FOTOS - 1) : gal.vis;
+  var html = lista.map(function(f,i){
+    return '<button class="g-item" data-g="' + i + '"><img loading="lazy" src="' + esc(f.thumb || f.img) + '" alt="' + esc(f.titulo || 'Foto de la galería') + '">' + (f.titulo ? '<span>' + esc(f.titulo) + '</span>' : '') + '</button>';
+  }).join('');
+  if (total > MAX_FOTOS){
+    var sig = gal.vis[MAX_FOTOS - 1], resto = total - (MAX_FOTOS - 1);
+    html += '<button class="g-item g-more" data-g="' + (MAX_FOTOS - 1) + '" aria-label="Ver ' + resto + ' fotos más"><img loading="lazy" src="' + esc(sig.thumb || sig.img) + '" alt=""><b>+' + resto + ' fotos<small>Ver más</small></b></button>';
+  }
+  $('#gGrid').innerHTML = total ? html :
+    '<div class="g-empty" style="grid-column:1/-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M3 17l5-4 4 3 3-2 6 4"/></svg><b>Pronto compartiremos nuestros proyectos</b>Mientras tanto, escríbenos y te mostramos ejemplos de lo que hacemos.</div>';
+}
+function showLb(i){
+  if (!gal.vis.length) return;
+  gal.i = (i + gal.vis.length) % gal.vis.length;
+  var f = gal.vis[gal.i];
+  $('#lbImg').src = f.img; $('#lbImg').alt = f.titulo || '';
+  $('#lbCap').textContent = (gal.vis.length > 1 ? (gal.i + 1) + ' / ' + gal.vis.length : '') + (f.titulo ? (gal.vis.length > 1 ? '  ·  ' : '') + f.titulo : '');
+  [gal.i + 1, gal.i - 1].forEach(function(k){ var p = gal.vis[(k + gal.vis.length) % gal.vis.length]; if (p) (new Image()).src = p.img; });
+  $('#lbPrev').hidden = $('#lbNext').hidden = gal.vis.length < 2;
+  $('#lb').hidden = false;
+}
+
+/* ---------- Eventos ---------- */
+document.addEventListener('click', function(e){
+  var t = e.target.closest('button,a'); if (!t) return;
+  if (t.dataset.album !== undefined){ gal.album = t.dataset.album; renderGallery(); return; }
+  if (t.dataset.g !== undefined){ showLb(+t.dataset.g); return; }
+  if (t.id === 'lbClose'){ $('#lb').hidden = true; return; }
+  if (t.id === 'lbPrev'){ showLb(gal.i - 1); return; }
+  if (t.id === 'lbNext'){ showLb(gal.i + 1); return; }
+  if (t.dataset.copy){
+    var val = t.dataset.copy === 'wa' ? fmtPhone(CONFIG.WHATSAPP) : CONFIG.EMAIL;
+    try { navigator.clipboard.writeText(val).then(function(){ toast('Copiado: ' + val); }, function(){ selectText(t); }); } catch(err){ selectText(t); }
+    return;
+  }
+  if (t.id === 'menuT'){ var open = $('#nav').classList.toggle('open'); t.setAttribute('aria-expanded', open); return; }
+  if (t.closest('#nav')) $('#nav').classList.remove('open');
+});
+function selectText(btn){ var s = btn.parentNode.querySelector('div a, div span'); var r = document.createRange(); r.selectNodeContents(s); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); toast('Texto seleccionado, cópialo con Ctrl+C'); }
+$('#lb').addEventListener('click', function(e){ if (e.target.id === 'lb') $('#lb').hidden = true; });
+document.addEventListener('keydown', function(e){
+  if ($('#lb').hidden) return;
+  if (e.key === 'Escape') $('#lb').hidden = true;
+  if (e.key === 'ArrowLeft') showLb(gal.i - 1);
+  if (e.key === 'ArrowRight') showLb(gal.i + 1);
+});
+
+/* Formulario: arma el mensaje y lo abre en WhatsApp o en el correo (no guarda datos) */
+var via = 'wa';
+document.querySelectorAll('.send button').forEach(function(b){ b.addEventListener('click', function(){ via = b.dataset.via; }); });
+$('#form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = function(id){ return $('#f-'+id).value.trim(); };
+  var msg = $('#formMsg');
+  if (!f('nombre') || !f('msg')){ msg.className = 'form-msg'; msg.textContent = 'Escribe tu nombre y tu mensaje para poder ayudarte.'; msg.hidden = false; return; }
+  var body = 'Hola BASARI GOLD,\n\n' + f('msg') + '\n\n' +
+    'Nombre: ' + f('nombre') + '\n' + (f('empresa') ? 'Empresa: ' + f('empresa') + '\n' : '') +
+    (f('tel') ? 'Celular: ' + f('tel') + '\n' : '') + (f('correo') ? 'Correo: ' + f('correo') + '\n' : '');
+  if (via === 'wa') window.open(waLink(body), '_blank');
+  else location.href = 'mailto:' + CONFIG.EMAIL + '?subject=' + encodeURIComponent('Contacto desde la web' + (f('empresa') ? ' — ' + f('empresa') : '')) + '&body=' + encodeURIComponent(body);
+  msg.className = 'form-msg ok'; msg.hidden = false;
+  msg.textContent = via === 'wa' ? 'Abrimos WhatsApp con tu mensaje listo. Solo presiona enviar.' : 'Abrimos tu correo con el mensaje listo. Si no se abrió, escríbenos a ' + CONFIG.EMAIL + '.';
+});
+
+/* Menú activo según la sección visible */
+var secs = ['inicio','nosotros','ofrecemos','marcas','soluciones','galeria','contacto'];
+addEventListener('scroll', function(){
+  var cur = 'inicio';
+  secs.forEach(function(id){ var el = document.getElementById(id); if (el && el.getBoundingClientRect().top < 140) cur = id; });
+  document.querySelectorAll('#nav a').forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + cur); });
+}, {passive:true});
+
+loadGallery();
+</script>
+</body>
+</html>
